@@ -1,4 +1,7 @@
-const API_BASE = import.meta.env.VITE_API_BASE || "";
+const API_BASE =
+  (window as Window & { __BIGSUP_API_BASE__?: string }).__BIGSUP_API_BASE__ ||
+  import.meta.env.VITE_API_BASE ||
+  "";
 
 export type Operator = {
   id: string;
